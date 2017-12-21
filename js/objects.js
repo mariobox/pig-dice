@@ -9,7 +9,7 @@ class Player {
 
     diceRoll() {
         var randomNumber = Math.floor(Math.random() * 6) + 1;
-        return randomNumber;         // return effectively ends the program
+        return randomNumber;         
     }
 
     
@@ -17,7 +17,6 @@ class Player {
     win() {
         if (this.total + this.partial >= 100) {
             this.total += this.partial;
-            console.log(`Game over. Player ${players[turn].name} wins with ${this.total} points.`);
             return true;
         }
     }

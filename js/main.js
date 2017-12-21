@@ -1,16 +1,13 @@
-var players = [new Player('Mario'), new Player('Sophie')];
-var turn = 0;
+'use strict'
 
-document.getElementById('0').innerHTML = `<h2>${players[0].name}</h2>`;
-document.getElementById('1').innerHTML = `<h2>${players[1].name}</h2>`;
-document.getElementById('goright').style.display = 'none';
-document.getElementById('partial').innerHTML = `<h5>Current Turn Score</h5><h3>0</h3>`;
-document.getElementById('dieroll').style.color = 'black';
-progressBar(0);
-progressBar(1);
+var players = [];
+var turn = 0;
+    
+inputPlayers();
+resetBoard();
 
 document.getElementById('roll').addEventListener('click', () => {
-    let play = players[turn].diceRoll();    
+    let play = players[turn].diceRoll();
 
     if (play === 1) {
         document.getElementById('dieroll').innerHTML = play;
@@ -44,6 +41,16 @@ document.getElementById('hold').addEventListener('click', () => {
     change_turns();
 });
 
+function inputPlayers() {
+    var player1 = prompt('Name of Player 1');
+    var player2 = prompt('Name of player 2');
+
+    players = [new Player(player1), new Player(player2)];
+
+    document.getElementById('0').innerHTML = `<h2>${players[0].name}</h2>`;
+    document.getElementById('1').innerHTML = `<h2>${players[1].name}</h2>`;
+}
+
 function change_turns() {
     if (turn === 0) {
         document.getElementById('goleft').style.display = 'none';
@@ -56,22 +63,24 @@ function change_turns() {
     }
 }
 
-
 function playAgain() {
     document.getElementById('again').addEventListener('click', () => {
-        turn = 0;
-        for (let i = 0; i < 2; i++) {
-            players[i].partial = 0;
-            players[i].total = 0;
-        }
-        // Reset board
-        document.getElementById('partial').innerHTML = `<h5>Current Turn Score</h5><h3>0</h3>`;
-        document.getElementById('dieroll').innerHTML = '';
-        document.getElementById('goright').style.display = 'none';
-        document.getElementById('goleft').style.display = 'inline';
-        progressBar(0);
-        progressBar(1);
+        resetBoard();
     });
+}
+
+function resetBoard() {
+    turn = 0;
+    for (let i = 0; i < 2; i++) {
+        players[i].partial = 0;
+        players[i].total = 0;
+    }
+    document.getElementById('partial').innerHTML = `<h5>Current Turn Score</h5><h3>0</h3>`;
+    document.getElementById('dieroll').innerHTML = '';
+    document.getElementById('goright').style.display = 'none';
+    document.getElementById('goleft').style.display = 'inline';
+    progressBar(0);
+    progressBar(1);
 }
 
 function progressBar(turn) {
@@ -93,13 +102,3 @@ function progressBar(turn) {
 
     bar.animate(players[turn].total / 100);
 }
-
-
-
-
-
-
-
-
-
-
