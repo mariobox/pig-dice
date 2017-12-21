@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pig Dice Game</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class="one-half column" id='0'>
+
+            </div>
+            <div class="one-half column" id='1'>
+
+            </div>
+        </div>
+
+
+        <div class='row'>
+            <div class="one-half column" id='tot-1'>
+                <div class="cont">
+                    <div class="progress">0</div>
+                </div>
+            </div>
+            <div class="one-half column" id='tot-2'>
+                <div class="cont">
+                    <div class="progress">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class="six columns">
+                <p>
+                    <img src="./img/go.png" class="dot" id="goleft">
+                </p>
+            </div>
+
+
+            <div class="six columns">
+                <p>
+                    <img src="./img/go.png" class="dot" id="goright">
+                </p>
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class="twelve columns" id="partial">
+            </div>
+        </div>
+
+
+        <div class='row'>
+            <div class='twelve columns'>
+                <span id='dieroll'></span>
+                <br />
+                <button id='roll'>Roll</button>
+                <button id='hold'>Hold</button>
+                <br />
+                <button id='again'>Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+    <script src='./js/objects.js'></script>
+    <script src='./js/main.js'></script>
+
+
+</body>
+
+</html>
