@@ -13,7 +13,7 @@ document.getElementById('roll').addEventListener('click', () => {
         document.getElementById('dieroll').innerHTML = play;
         document.getElementById('dieroll').style.color = 'red';
         players[turn].partial = 0;
-        document.getElementById('partial').innerHTML = `<h5>Current Turn Score</h5><h3>0</h3>`;
+        document.getElementById('partial').innerHTML = `<h5>Current Turn Score</h5><h3>${players[turn].partial = 0}</h3>`;
         change_turns();
     }
 
@@ -23,7 +23,7 @@ document.getElementById('roll').addEventListener('click', () => {
         players[turn].partial += play;
         document.getElementById('partial').innerHTML = `<h5>Current Turn Score</h5><h3>${players[turn].partial}</h3>`;
         if (players[turn].win()) {
-            players[turn].total = 100;
+            document.getElementById('dieroll').innerHTML = '';
             document.getElementById('partial').innerHTML = `<h5>${players[turn].name} Wins!</h5>`;
             progressBar(turn);
             playAgain();

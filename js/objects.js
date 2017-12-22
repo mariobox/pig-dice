@@ -16,7 +16,7 @@ class Player {
 
     win() {
         if (this.total + this.partial >= 100) {
-            this.total += this.partial;
+            this.total = 100;
             return true;
         }
     }
