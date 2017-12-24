@@ -1,4 +1,5 @@
 # Pig Dice Game
+
 JavaScript implementation of the popular [Pig Dice](https://en.wikipedia.org/wiki/Pig_(dice_game)) game.
 
 Circular progress bar based on [progressbar.js](https://kimmobrunfeldt.github.io/progressbar.js/) by Kimmo Brunfeldt.
